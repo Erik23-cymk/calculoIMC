@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun calculate(): String {
+    private fun calculate() {
 
         val weight = editWeight.text.toString().toFloat()
         val height = editHeight.text.toString().toFloat()
@@ -28,11 +28,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val totalvalue = weight.toDouble() / (height.toDouble() * height.toDouble())
         textTotalValue.text = " ${"%.2f".format(totalvalue)}"
 
-
-
-
-
-         return when (totalvalue) {
+        seuImc.text = when (totalvalue) {
             in 0..17 -> "Muito abaixo do peso."
             in 17.1..18.49 -> "Abaixo do peso."
             in 18.5..24.99 -> "Peso normal."
